@@ -11,7 +11,7 @@ router.post("/film/delete/:film_id", film.deleteFilm)
 
 router.get('/', (req, res) => {
     res.json({
-        message: 'quandz'
+        message: 'quandza'
     })
 })
 

@@ -10,13 +10,12 @@ const app = express()
 configViewEngine(app)
 
 const port = process.env.PORT
-const host = process.env.HOST_NAME
 
 app.use(cors())
 
 app.use("/", routes)
 app.use("/api/ver1/", api)
 
-app.listen(port, host, () => {
-    console.log(`http://${host}:${port}`)
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`)
 })

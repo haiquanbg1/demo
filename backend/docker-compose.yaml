@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.1.0
+    container_name: mysql-server
+    restart: always
+    environment:
+      - MYSQL_DATABASE=web
+      - MYSQL_ROOT_PASSWORD=123456
+    ports:
+      - "3308:3306"
+    networks:
+      - demo-network
+  server:
+    depends_on:
+      - db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: api-server
+    restart: always
+    volumes:
+      - .:/app
+      - /app/node_modules
+    ports:
+      - "8080:8080"
+    networks:
+      - demo-network
+    env_file:
+      - .env
+    expose:
+      - 8080
+networks:
+  demo-network:
+    driver: bridge
