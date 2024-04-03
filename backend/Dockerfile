@@ -2,11 +2,11 @@ FROM node:21.1.0
 
 WORKDIR /app
 
-COPY ["./package*.json","./"]
+COPY ["./backend/package*.json","./"]
 
 RUN npm ci
 
-COPY . . 
+COPY /backend . 
 
 CMD ["npm", "run", "dev"]
 

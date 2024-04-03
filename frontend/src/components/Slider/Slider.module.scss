@@ -1,0 +1,51 @@
+.arrow {
+    position: absolute;
+    outline: none;
+    height: 100%;
+    min-width: 80px;
+    visibility: hidden;
+    color: rgba(255, 255, 255, 0.838);
+    transition: 0.1s;
+    overflow: hidden;
+    background: transparent;
+}
+
+.arrow:hover {
+    color: #72be43;
+}
+
+.left {
+    left: 0;
+}
+
+
+.right {
+
+    right: 0;
+}
+
+
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper :hover .arrow {
+    visibility: visible;
+}
+
+.active {
+    color: var(--primary-color);
+    margin: 5px;
+}
+
+.inactive {
+    color: rgba(255, 255, 255, 0.3);
+    margin: 5px;
+
+}
+
+.custom-dot-list {
+    position: absolute;
+    bottom: 30px;
+}

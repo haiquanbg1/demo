@@ -1,0 +1,38 @@
+@import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+:root {
+    --primary-color: #5b9836;
+    --background-color: #1a1d29;
+    --scroll-color: #454d6a;
+    --border-color: #90C63F;
+    --buy-ticket: #72be43;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: "Nunito", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.6;
+}
+
+button,
+input,
+[tabindex] {
+    outline: none;
+    border: none;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+}

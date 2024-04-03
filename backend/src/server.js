@@ -10,6 +10,7 @@ const app = express()
 configViewEngine(app)
 
 const port = process.env.PORT
+const host = process.env.HOST_NAME
 
 app.use(cors())
 

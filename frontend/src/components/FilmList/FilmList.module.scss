@@ -1,0 +1,68 @@
+.wrapper {
+    margin-bottom: 70px;
+
+    &:nth-child(1) {
+        margin-top: 70px;
+    }
+}
+
+
+.arrow {
+    position: absolute;
+    outline: none;
+    height: 100%;
+    min-width: 80px;
+    visibility: hidden;
+    color: #9bc562;
+    transition: 0.1s;
+    overflow: hidden;
+
+}
+
+.arrow:hover {
+    color: var(--primary-color);
+}
+
+.left {
+    background: linear-gradient(to right, rgba(26, 29, 41, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    left: 0;
+}
+
+.left:hover {
+    background: linear-gradient(to right, rgba(26, 29, 41, 1) 0%, rgba(0, 0, 0, 0) 100%);
+
+}
+
+.right {
+    background: linear-gradient(to left, rgba(26, 29, 41, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+    right: 0;
+}
+
+.right:hover {
+    background: linear-gradient(to left, rgba(26, 29, 41, 1) 0%, rgba(0, 0, 0, 0) 100%);
+
+}
+
+.wrapper {
+    position: relative;
+}
+
+.wrapper :hover .arrow {
+    visibility: visible;
+}
+
+.active {
+    color: var(--primary-color);
+    margin: 5px;
+}
+
+.inactive {
+    color: #76777f;
+    margin: 5px;
+
+}
+
+.custom-dot-list {
+    position: absolute;
+    bottom: -60px;
+}

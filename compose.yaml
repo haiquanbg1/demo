@@ -16,21 +16,38 @@ services:
     depends_on:
       - db
     build:
-      context: .
+      context: backend/.
       dockerfile: Dockerfile
     container_name: api-server
     restart: always
     volumes:
       - .:/app
-      - /app/node_modules
+      - /app/backend/node_modules
     ports:
       - "8080:8080"
     networks:
       - demo-network
     env_file:
-      - .env
+      - backend/.env
     expose:
       - 8080
+  client:
+    build:
+      context: frontend/.
+      dockerfile: Dockerfile
+    container_name: client
+    restart: always
+    volumes:
+      - .:/app
+      - /app/frontend/node_modules
+    ports:
+      - "3000:3000"
+    networks:
+      - demo-network
+    env_file:
+      - frontend/.env
+    expose:
+      - 3000
 networks:
   demo-network:
     driver: bridge

@@ -1,0 +1,37 @@
+{
+  "user": [
+    {
+      "id": "8fd8",
+      "firstName": "Khánh",
+      "lastName": "Lê",
+      "gender": "male",
+      "email": "admin@gmail.com",
+      "password": "123456",
+      "phone": "0975043426",
+      "birthday": "2004/11/26",
+      "city_id": 1
+    },
+    {
+      "id": "e9d3",
+      "firstname": "Khánh",
+      "lastname": "Lê",
+      "gender": "female",
+      "email": "admin1@gmail.com",
+      "password": "123456",
+      "phone": "0975043426",
+      "birthday": "2001/4/7",
+      "city_id": 1
+    },
+    {
+      "id": "7df6",
+      "firstname": "Khánh",
+      "lastname": "Lê",
+      "gender": "female",
+      "email": "quan@gmail.com",
+      "password": "123456",
+      "phone": "0975043426",
+      "birthday": "2006/2/1",
+      "city_id": 1
+    }
+  ]
+}
