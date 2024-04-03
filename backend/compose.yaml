@@ -1,0 +1,15 @@
+include:
+  - mysql.yaml
+services:
+  web:
+    build: .
+    restart: always
+    ports:
+      - "8080:8080"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+    depends_on:
+      - mysql

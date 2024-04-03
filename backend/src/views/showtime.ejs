@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Showtime</title>
+    <link rel="stylesheet" href="/css/showtime.css">
+</head>
+<body>
+    <ul>
+        <li><a href="/film">Film</a></li>
+        <li><a class="active" href="/showtime">Showtime</a></li>
+    </ul>
+<button class="open-button" onclick="openAddForm()">Add</button>
+<div class="form-popup" id="addForm">
+    <form action="/showtime/post" method="post">
+        <label for="film_id">film:</label>
+        <input type="number" name="film_id" id="film_id"><br>
+        <label for="cinema_id">cinema:</label>
+        <input type="number" name="cinema_id" id="cinema_id"><br>
+        <label for="time">time:</label>
+        <input type="datetime-local" name="time" id="time"><br>
+        <label for="price">price:</label>
+        <input type="number" name="price" id="price"><br>
+        <input type="submit" value="add">
+    </form>
+</div>
+<script >
+    function openAddForm() {
+        document.getElementById("myForm").style.display = "none";
+        document.getElementById("addForm").style.display = "block";
+    }
+</script>
+    <h2>List showtimes</h2>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Film</th>
+            <th>Cinema</th>
+            <th>Time</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <% for (var i=0; i<showtimes.length; i++) { %>
+            <div class="form-popup" id="myForm">
+                <form action="/showtime/update" method="post">
+                    <input class="hidden" type="text" name="showtime_id" id="showtime_id" value="<%= showtimes[i].showtime_id %>"><br>
+                    <label for="film_id">film:</label>
+                    <input type="number" name="film_id" id="film_id" value="<%= showtimes[i].film_id %>"><br>
+                    <label for="cinema_id">cinema:</label>
+                    <input type="number" name="cinema_id" id="cinema_id" value="<%= showtimes[i].cinema_id %>"><br>
+                    <label for="time">time:</label>
+                    <input type="datetime-local" name="time" id="time" value="<%= showtimes[i].time %>"><br>
+                    <label for="price">price:</label>
+                    <input type="number" name="price" id="price" value="<%= showtimes[i].price %>"><br>
+                    <input type="submit" value="update">
+                </form>
+            </div>
+        <tr>
+            <td><%= showtimes[i].showtime_id %></td>
+            <td><%= showtimes[i].film_id %></td>
+            <td><%= showtimes[i].cinema_id %></td>
+            <td><%= showtimes[i].time %></td>
+            <td><%= showtimes[i].price %></td>
+            <td>
+                <div action="" id="editdb">
+                    <button class="edit" onclick="openForm()">Edit</button>
+                </div>
+                <form action="/showtime/delete/<%= showtimes[i].showtime_id %>" method="post">
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    <script>
+        function openForm() {
+            document.getElementById("addForm").style.display = "none";
+            document.getElementById("myForm").style.display = "block";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="/">Home</a></li>
+        <li><a href="/add">Add</a></li>
+    </ul>
+
+    <h2>List users</h2>
+
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+        <% for (var i=0; i<users.length; i++) { %>
+        <tr>
+            <td><%= users[i].user_id %></td>
+            <td><%= users[i].firstname + " " + users[i].lastname %></td>
+            <td><%= users[i].city %></td>
+            <%
+                if (users[i].gender == 1) 
+            { %>
+                <td>Male</td>
+            <% } else { %>
+                <td>Female</td>
+            <% } %>
+            <td>
+                <form action="/edit/<%= users[i].user_id %>" method="get">
+                    <button>Edit</button>
+                </form>
+                <form action="/delete/<%= users[i].user_id %>" method="post">
+                    <button>Delete</button>
+                </form>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+
+</body>
+</html>
